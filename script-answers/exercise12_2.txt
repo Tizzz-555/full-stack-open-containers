@@ -1,0 +1,59 @@
+Script started on Thu Jan 22 17:25:33 2026
+[1m[7m%[27m[1m[0m                                                                                ]7;file://MacBook-Air.local/Users/mattiabeccari/GitHub/full-stack-root/full-stack-open-containers/script-answers[0m[27m[24m[Jmattiabeccari@MacBook-Air script-answers % [K[?2004hexitscript exercise 12_2.txt[24Dcd script-answers       [17Dls               [15Dcd full-stack-open-containers[29Dls                           [27Dcd ..ls   cd full-stack-openroot[15DGitHub         [9D[9Drm typescript[13Dcat typescript[14Dls            [12Dscriptdocker image pull hello-world[22Dcontainer run hello-world[?2004l
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (arm64v8)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+[1m[7m%[27m[1m[0m                                                                                ]7;file://MacBook-Air.local/Users/mattiabeccari/GitHub/full-stack-root/full-stack-open-containers/script-answers[0m[27m[24m[Jmattiabeccari@MacBook-Air script-answers % [K[?2004hddocker run -it un buntu bash[?2004l
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+
+[1A[2K36bf709aa36d: Pulling fs layer [1B[1A[2K36bf709aa36d: Downloading  299.7kB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  589.8kB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  892.9kB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  1.479MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  2.376MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  2.671MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  4.432MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  6.504MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  9.171MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  10.94MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  12.41MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading   13.3MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  16.84MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  17.72MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  18.31MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  20.07MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  21.85MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  22.45MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  24.23MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  26.89MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  27.78MB/28.86MB[1B[1A[2K36bf709aa36d: Downloading  28.07MB/28.86MB[1B[1A[2K36bf709aa36d: Verifying Checksum [1B[1A[2K36bf709aa36d: Download complete [1B[1A[2K36bf709aa36d: Extracting  294.9kB/28.86MB[1B[1A[2K36bf709aa36d: Extracting  4.129MB/28.86MB[1B[1A[2K36bf709aa36d: Extracting  7.668MB/28.86MB[1B[1A[2K36bf709aa36d: Extracting  10.03MB/28.86MB[1B[1A[2K36bf709aa36d: Extracting  15.93MB/28.86MB[1B[1A[2K36bf709aa36d: Extracting  22.41MB/28.86MB[1B[1A[2K36bf709aa36d: Extracting  24.18MB/28.86MB[1B[1A[2K36bf709aa36d: Extracting  26.25MB/28.86MB[1B[1A[2K36bf709aa36d: Extracting  27.13MB/28.86MB[1B[1A[2K36bf709aa36d: Extracting  28.61MB/28.86MB[1B[1A[2K36bf709aa36d: Extracting  28.86MB/28.86MB[1B[1A[2K36bf709aa36d: Pull complete [1BDigest: sha256:cd1dba651b3080c3686ecf4e3c4220f026b521fb76978881737d24f200828b2b
+Status: Downloaded newer image for ubuntu:latest
+[?2004h]0;root@09c066fed1d5: /root@09c066fed1d5:/# ls
+[?2004l[0m[01;36mbin[0m   [01;34mdev[0m  [01;34mhome[0m  [01;34mmedia[0m  [01;34mopt[0m   [01;34mroot[0m  [01;36msbin[0m  [01;34msys[0m  [01;34musr[0m
+[01;34mboot[0m  [01;34metc[0m  [01;36mlib[0m   [01;34mmnt[0m    [01;34mproc[0m  [01;34mrun[0m   [01;34msrv[0m   [30;42mtmp[0m  [01;34mvar[0m
+[?2004h]0;root@09c066fed1d5: /root@09c066fed1d5:/# mkdir usr         cd usr/
+[?2004l[?2004h]0;root@09c066fed1d5: /usrroot@09c066fed1d5:/usr# cd ..
+[?2004l[?2004h]0;root@09c066fed1d5: /root@09c066fed1d5:/# mkdir      an mkdir
+[?2004lThis system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, including manpages, you can run the 'unminimize'
+command. You will still need to ensure the 'man-db' package is installed.
+[?2004h]0;root@09c066fed1d5: /root@09c066fed1d5:/# mkdir usr/src/app
+[?2004l[?2004h]0;root@09c066fed1d5: /root@09c066fed1d5:/# mkdir usr/src/app[Ktouck h usr/src/app index.js
+[?2004l[?2004h]0;root@09c066fed1d5: /root@09c066fed1d5:/# [Kcd usr. /src/app
+[?2004l[?2004h]0;root@09c066fed1d5: /usr/src/approot@09c066fed1d5:/usr/src/app# ls
+[?2004l[?2004h]0;root@09c066fed1d5: /usr/src/approot@09c066fed1d5:/usr/src/app# ls
+[?2004l[?2004h]0;root@09c066fed1d5: /usr/src/approot@09c066fed1d5:/usr/src/app# touch index.js
+[?2004l[?2004h]0;root@09c066fed1d5: /usr/src/approot@09c066fed1d5:/usr/src/app# s ls
+[?2004lindex.js
+[?2004h]0;root@09c066fed1d5: /usr/src/approot@09c066fed1d5:/usr/src/app# exit
+[?2004lexit
+[1m[7m%[27m[1m[0m                                                                                ]7;file://MacBook-Air.local/Users/mattiabeccari/GitHub/full-stack-root/full-stack-open-containers/script-answers[0m[27m[24m[Jmattiabeccari@MacBook-Air script-answers % [K[?2004heexit[?2004l
+
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+Script done on Thu Jan 22 17:35:51 2026
