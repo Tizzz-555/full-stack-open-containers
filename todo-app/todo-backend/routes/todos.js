@@ -27,13 +27,6 @@ router.post("/", async (req, res) => {
     res.status(500).json({ error: "Failed to create todo" });
   }
 });
-/* GET statistics */
-router.get("/statistics", async (req, res) => {
-  const addedTodos = await redis.getAsync("added_todos");
-  res.send({
-    added_todos: parseInt(addedTodos) || 0,
-  });
-});
 
 const singleRouter = express.Router();
 
