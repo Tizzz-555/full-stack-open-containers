@@ -1,7 +1,7 @@
 const express = require("express");
 const { Todo } = require("../mongo");
 const router = express.Router();
-
+const redis = require("../redis");
 /* GET todos listing. */
 router.get("/", async (_, res) => {
   const todos = await Todo.find({});
@@ -10,11 +10,29 @@ router.get("/", async (_, res) => {
 
 /* POST todo to listing. */
 router.post("/", async (req, res) => {
-  const todo = await Todo.create({
-    text: req.body.text,
-    done: false,
+  try {
+    const todo = await Todo.create({
+      text: req.body.text,
+      done: false,
+    });
+
+    let addedTodos = await redis.getAsync("added_todos");
+    addedTodos = addedTodos ? parseInt(addedTodos) : 0;
+    addedTodos++;
+    await redis.setAsync("added_todos", addedTodos);
+
+    res.send(todo);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Failed to create todo" });
+  }
+});
+/* GET statistics */
+router.get("/statistics", async (req, res) => {
+  const addedTodos = await redis.getAsync("added_todos");
+  res.send({
+    added_todos: parseInt(addedTodos) || 0,
   });
-  res.send(todo);
 });
 
 const singleRouter = express.Router();
