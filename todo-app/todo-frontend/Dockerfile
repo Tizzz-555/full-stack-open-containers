@@ -1,20 +1,18 @@
-# The first FROM is now a stage called build-stage
-
-FROM node:20 AS build-stage 
-
+# Stage 1: Install dependencies
+FROM node:20 AS deps
 WORKDIR /usr/src/app
-
-COPY . .
-
+COPY package*.json ./
 RUN npm ci
 
+# Stage 2: Run tests
+FROM deps AS test
+COPY . .
+RUN npm test
+
+# Stage 3: Build (copies from TEST stage, not deps!)
+FROM test AS build
 RUN npm run build
 
-# This is a new stage, everything before this is gone, except for the files that we want to COPY
-
+# Stage 4: Production
 FROM nginx:1.25-alpine
-
-# COPY the directory dist from the build-stage to /usr/share/nginx/html
-# The target location here was found from the Docker hub page
-
-COPY --from=build-stage /usr/src/app/dist /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist /usr/share/nginx/html
