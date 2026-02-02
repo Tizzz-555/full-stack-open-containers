@@ -2,9 +2,11 @@ FROM node:20
 
 WORKDIR /usr/src/app
 
-COPY . .
+COPY package.json package-lock.json ./
 
-RUN npm install
+RUN npm ci --only=production
+
+COPY . .
 
 ENV DEBUG=docker-stuff:*
 

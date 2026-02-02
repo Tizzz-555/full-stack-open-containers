@@ -1,4 +1,18 @@
 services:
+  server:
+    image: todo-backend-dev
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./:/usr/src/app # Syncs your local code with the container!
+    ports:
+      - 3000:3000
+    environment:
+      # Inside Docker Compose, you use the SERVICE NAME as the hostname
+      - MONGO_URL=mongodb://the_username:the_password@mongo:27017/the_database
+      - REDIS_URL=redis://redis:6379
+      - DEBUG=docker-stuff:*
   mongo:
     image: mongo
     ports:
