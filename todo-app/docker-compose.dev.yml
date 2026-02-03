@@ -3,7 +3,12 @@ services:
     image: todo-frontend-dev # Already built image!
     volumes:
       - ./todo-frontend:/usr/src/app
-    container_name: todo-frontend-dev
+    container_name: todo-frontend-dev-served
+  server:
+    image: todo-backend-dev
+    volumes:
+      - ./todo-backend:/usr/src/app
+    container_name: todo-backend-dev-served
   nginx:
     image: nginx:1.20.1
     volumes:
