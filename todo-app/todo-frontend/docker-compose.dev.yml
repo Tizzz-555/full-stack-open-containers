@@ -9,5 +9,5 @@ services:
     ports:
       - 5173:5173
     container_name: todo-frontend-dev # This will name the container todo-frontend-dev
-    debug-helper:
-      image: busybox
+  debug-helper:
+    image: busybox

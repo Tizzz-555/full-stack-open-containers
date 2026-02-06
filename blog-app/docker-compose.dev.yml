@@ -1,0 +1,28 @@
+services:
+  app:
+    image: blog-frontend-dev
+    build:
+      context: ./blog-frontend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./blog-frontend:/usr/src/app
+      - /usr/src/app/node_modules
+  server:
+    image: blog-backend-dev
+    build:
+      context: ./blog-backend
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./blog-backend:/usr/src/app
+      - /usr/src/app/node_modules
+    env_file:
+      - ./blog-backend/.env
+
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    depends_on:
+      - server
