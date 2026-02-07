@@ -2,7 +2,7 @@ FROM node:20
 
 WORKDIR /usr/src/app
 
-COPY package.json package-lock.json ./
+COPY package.json package-lock.json .
 
 RUN npm ci --only=production
 
